@@ -24,7 +24,6 @@
                 <a href="#home0" class="nav-items" style="color: #FFFFFF">Giới thiệu</a>
                 <a href="#home1" class="nav-items" style="color: #FFFFFF">Blog hot</a>
                 <a href="#home2" class="nav-items" style="color: #FFFFFF">BLOG VỀ LẬP TRÌNH</a>
-
             </div>
         </div>
         <div class="option">
@@ -34,7 +33,7 @@
                 <option value="lang">Tiếng Anh</option>
             </select>
             <div class="sign">
-                <a href="blog/login.jsp" class="sign-items" style="color: #FFFFFF">Đăng Nhập</a>
+                <a href="/login" class="sign-items" style="color: #FFFFFF">Đăng Nhập</a>
             </div>
         </div>
     </header>

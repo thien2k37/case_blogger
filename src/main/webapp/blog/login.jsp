@@ -47,8 +47,8 @@
 
                 </div>
                 <input type="text" placeholder="Tên Đăng Nhâp hoặc Email" name="username"/>
+                <input type="password" placeholder="Mật Khẩu" name="password"/>
                 <input type="text" placeholder="Tên đầy đủ" name="full_name"/>
-                <input type="password" placeholder="Mat khau" name="password"/>
                 <button>Đăng ký</button>
             </form>
         </div>
@@ -76,7 +76,7 @@
                 <div class="overlay-panel overlay-right">
                     <h1>XIn Chào, Bạn!</h1>
                     <p>Nhập thông tin cá nhân của bạn và bắt đầu hành trình với chúng tôi</p>
-                    <button class="ghost" id="signUp">Đăng Ký</button>
+                    <button class="ghost" id="signUp"><a href="/sig_up">Đăng Ký</a></button>
                 </div>
             </div>
         </div>

@@ -34,8 +34,8 @@ public class CategoryServlet extends HttpServlet {
 
     private void showList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("category/list.jsp");
-        List<Category> categories = categoryService.findAll();
-        request.setAttribute("cate",categories);
+        /*List<Category> categories = categoryService.findAll();*/
+        /*request.setAttribute("cate",categories);*/
         requestDispatcher.forward(request,response);
     }
 
