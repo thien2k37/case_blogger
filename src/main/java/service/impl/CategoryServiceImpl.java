@@ -3,9 +3,9 @@ package service.impl;
 import model.Category;
 import service.CategoryService;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CategoryServiceImpl implements CategoryService {
     private String jdbcURL = "jdbc:mysql://localhost:3306/blogDB?useSSL=false";
@@ -45,5 +45,22 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public boolean update(Category category) throws SQLException {
         return false;
+    }
+
+    @Override
+    public List<Category> findAll() {
+                List<Category> categories = new ArrayList<>();
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement("select * from categories");) {
+            System.out.println(preparedStatement);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                categories.add(new Category(id,name));
+            }
+        } catch (SQLException e) {
+        }
+        return categories;
     }
 }
