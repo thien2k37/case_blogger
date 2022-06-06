@@ -80,7 +80,6 @@ public class UserServiceImpl implements UserService {
             preparedStatement.executeUpdate();
             rowUpdate = preparedStatement.executeUpdate() > 0;
         }
-
         return rowUpdate;
     }
 
@@ -106,7 +105,24 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> findByName(String name) {
-        return null;
+    public User findByName(String username) {
+        List<User> userList = findAll();
+        for (User user: userList) {
+            if (user.getUsername().equals(username)) {
+                return user;
+            }
+        }
+        return new User();
+    }
+
+    @Override
+    public User login(String username, String password) {
+        List<User> userList = findAll();
+        for (User user: userList) {
+            if (user.getUsername().equals(username) & user.getPassword().equals(password)) {
+                return user;
+            }
+        }
+        return new User();
     }
 }
