@@ -13,6 +13,17 @@ public class Post {
     public Post() {
     }
 
+    public Post(int id, String title, int view, String image, String content, int userId, int categoryId, String date) {
+        this.id = id;
+        this.title = title;
+        this.view = view;
+        this.image = image;
+        this.content = content;
+        this.userId = userId;
+        this.categoryId = categoryId;
+        this.date = date;
+    }
+
     public int getId() {
         return id;
     }
@@ -76,5 +87,5 @@ public class Post {
     public void setDate(String date) {
         this.date = date;
     }
-//
+
 }

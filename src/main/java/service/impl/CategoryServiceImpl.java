@@ -10,7 +10,7 @@ import java.util.List;
 public class CategoryServiceImpl implements CategoryService {
     private String jdbcURL = "jdbc:mysql://localhost:3306/blogDB?useSSL=false";
     private String jdbcUsername = "root";
-    private String jdbcPassword = "cxtjmg2k";
+    private String jdbcPassword = "123456";
 
     protected Connection getConnection(){
         Connection connection = null;

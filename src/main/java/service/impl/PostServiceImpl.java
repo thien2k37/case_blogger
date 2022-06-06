@@ -3,17 +3,16 @@ package service.impl;
 import model.Post;
 import service.PostService;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PostServiceImpl implements PostService {
-    private String jdbcURL = "jdbc:mysql://localhost:3306/blogDB?useSSL=false";
-    private String jdbcUsername = "root";
-    private String jdbcPassword = "cxtjmg2k";
+    private static String jdbcURL = "jdbc:mysql://localhost:3306/blogDB?useSSL=false";
+    private static String jdbcUsername = "root";
+    private static String jdbcPassword = "123456";
 
-    protected Connection getConnection(){
+    protected static Connection getConnection(){
         Connection connection = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -25,6 +24,33 @@ public class PostServiceImpl implements PostService {
     }
 
     public PostServiceImpl() {
+    }
+
+    @Override
+    public List<Post> findAll() {
+        List<Post>  posts = new ArrayList<>();
+
+        try (Connection connection = getConnection();
+
+             PreparedStatement preparedStatement = connection.prepareStatement("select * from posts");) {
+            System.out.println(preparedStatement);
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String title = rs.getString("title");
+                int view_number = rs.getInt("view_number");
+                String image = rs.getString("image");
+                String content = rs.getString("content");
+                int category_id = rs.getInt("category_id");
+                int user_id = rs.getInt("user_id");
+                String date = rs.getString("date");
+                posts.add(new Post(id,title,view_number,image,content,category_id,user_id,date));
+
+            }
+        } catch (SQLException e) {
+        }
+
+        return posts;
     }
 
     @Override
@@ -47,10 +73,6 @@ public class PostServiceImpl implements PostService {
         return false;
     }
 
-    @Override
-    public List<Post> findAll() {
-        return null;
-    }
 
     @Override
     public List<Post> findByName(String name) {
