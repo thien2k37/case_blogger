@@ -9,24 +9,20 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "LoginServlet", urlPatterns = "/logins")
+@WebServlet(name = "LoginServlet", urlPatterns = "/login")
 public class LoginServlet extends HttpServlet {
     UserService userService = new UserServiceImpl();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("blog/login.jsp");
+        requestDispatcher.forward(request,response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        User user = null;
-        try {
-            user = userService.login(username, password);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        User user = userService.login(username, password);
         if (user == null) {
             request.getRequestDispatcher("user/login.jsp").forward(request, response);
         } else {
@@ -34,5 +30,6 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("acc" ,user);
             response.sendRedirect("index.jsp");
         }
+
     }
 }
