@@ -2,7 +2,7 @@
 <dataSource name="@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.39">
     <root id="1">
-      <DefaultCasing>exact</DefaultCasing>
+      <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
       <Grants>|root||root|localhost|ALTER|G
@@ -62,6 +62,7 @@
 |root||root|localhost|ROLE_ADMIN|G
 |root||mysql.infoschema|localhost|SELECT|G
 |root||root|localhost|SELECT|G
+|root||root|localhost|SENSITIVE_VARIABLES_OBSERVER|G
 |root||root|localhost|SERVICE_CONNECTION_ADMIN|G
 |root||mysql.session|localhost|SESSION_VARIABLES_ADMIN|G
 |root||root|localhost|SESSION_VARIABLES_ADMIN|G
@@ -84,24 +85,6 @@
 |root||root|localhost|UPDATE|G
 |root||root|localhost|XA_RECOVER_ADMIN|G
 |root||root|localhost|grant option|G
-dbname|schema||username|localhost|ALTER|G
-dbname|schema||username|localhost|ALTER ROUTINE|G
-dbname|schema||username|localhost|CREATE|G
-dbname|schema||username|localhost|CREATE ROUTINE|G
-dbname|schema||username|localhost|CREATE TEMPORARY TABLES|G
-dbname|schema||username|localhost|CREATE VIEW|G
-dbname|schema||username|localhost|DELETE|G
-dbname|schema||username|localhost|DROP|G
-dbname|schema||username|localhost|EVENT|G
-dbname|schema||username|localhost|EXECUTE|G
-dbname|schema||username|localhost|INDEX|G
-dbname|schema||username|localhost|INSERT|G
-dbname|schema||username|localhost|LOCK TABLES|G
-dbname|schema||username|localhost|REFERENCES|G
-dbname|schema||username|localhost|SELECT|G
-dbname|schema||username|localhost|SHOW VIEW|G
-dbname|schema||username|localhost|TRIGGER|G
-dbname|schema||username|localhost|UPDATE|G
 performance_schema|schema||mysql.session|localhost|SELECT|G
 sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <ServerVersion>8.0.29</ServerVersion>
@@ -963,191 +946,214 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <collation id="273" parent="1" name="utf8mb4_zh_0900_as_cs">
       <Charset>utf8mb4</Charset>
     </collation>
-    <schema id="274" parent="1" name="QuanLyBanHang">
+    <schema id="274" parent="1" name="blogdb">
       <Current>1</Current>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="275" parent="1" name="QuanLySinhVien">
+    <schema id="275" parent="1" name="demo2022">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="276" parent="1" name="baiTap">
+    <schema id="276" parent="1" name="demoall">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="277" parent="1" name="blogDB">
+    <schema id="277" parent="1" name="demogist">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="278" parent="1" name="classicmodels">
-      <CollationName>latin1_swedish_ci</CollationName>
-    </schema>
-    <schema id="279" parent="1" name="demo3105">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="280" parent="1" name="demo_case">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="281" parent="1" name="information_schema">
+    <schema id="278" parent="1" name="information_schema">
       <CollationName>utf8_general_ci</CollationName>
     </schema>
-    <schema id="282" parent="1" name="md">
+    <schema id="279" parent="1" name="mysql">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="283" parent="1" name="mysql">
+    <schema id="280" parent="1" name="performance_schema">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="284" parent="1" name="performance_schema">
+    <schema id="281" parent="1" name="thuchanhmd3">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="285" parent="1" name="playerdou">
+    <schema id="282" parent="1" name="world">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="286" parent="1" name="students_codegym">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="287" parent="1" name="sys">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <user id="288" parent="1" name="mysql.infoschema">
+    <user id="283" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="289" parent="1" name="mysql.session">
+    <user id="284" parent="1" name="mysql.session">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="290" parent="1" name="mysql.sys">
+    <user id="285" parent="1" name="mysql.sys">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="291" parent="1" name="root">
+    <user id="286" parent="1" name="root">
       <Host>localhost</Host>
+      <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="292" parent="1" name="username">
-      <Host>localhost</Host>
-    </user>
-    <table id="293" parent="274" name="Customer">
+    <table id="287" parent="274" name="categories">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="294" parent="274" name="OrderDetail">
+    <table id="288" parent="274" name="level">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="295" parent="274" name="Product">
+    <table id="289" parent="274" name="posts">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="296" parent="274" name="order">
+    <table id="290" parent="274" name="users">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="297" parent="293" name="cID">
-      <AutoIncrement>6</AutoIncrement>
+    <column id="291" parent="287" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="298" parent="293" name="cName">
+    <column id="292" parent="287" name="name">
+      <DataType>varchar(500)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <key id="293" parent="287" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="294" parent="288" name="id">
+      <AutoIncrement>4</AutoIncrement>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="295" parent="288" name="name">
       <DataType>varchar(25)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="299" parent="293" name="cAge">
-      <DataType>tinyint|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <key id="300" parent="293" name="PRIMARY">
-      <ColNames>cID</ColNames>
+    <index id="296" parent="288" name="name">
+      <ColNames>name</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="297" parent="288" name="PRIMARY">
+      <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="301" parent="294" name="oID">
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="302" parent="294" name="pId">
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="303" parent="294" name="odQTY">
-      <DataType>int|0s</DataType>
-      <Position>3</Position>
-    </column>
-    <foreign-key id="304" parent="294" name="OrderDetail_ibfk_1">
-      <ColNames>oID</ColNames>
-      <RefColNames>cID</RefColNames>
-      <RefTableName>order</RefTableName>
-    </foreign-key>
-    <foreign-key id="305" parent="294" name="OrderDetail_ibfk_2">
-      <ColNames>pId</ColNames>
-      <RefColNames>pID</RefColNames>
-      <RefTableName>Product</RefTableName>
-    </foreign-key>
-    <index id="306" parent="294" name="oID">
-      <ColNames>oID</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="307" parent="294" name="pId">
-      <ColNames>pId</ColNames>
-      <Type>btree</Type>
-    </index>
-    <column id="308" parent="295" name="pID">
-      <AutoIncrement>15</AutoIncrement>
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="309" parent="295" name="pName">
-      <DataType>varchar(25)|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <column id="310" parent="295" name="pPrice">
-      <DataType>int|0s</DataType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-    </column>
-    <key id="311" parent="295" name="PRIMARY">
-      <ColNames>pID</ColNames>
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
+    <key id="298" parent="288" name="name">
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>name</UnderlyingIndexName>
     </key>
-    <column id="312" parent="296" name="oID">
-      <AutoIncrement>2</AutoIncrement>
+    <column id="299" parent="289" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="313" parent="296" name="cID">
-      <DataType>int|0s</DataType>
+    <column id="300" parent="289" name="title">
+      <Comment>tiêu đề bài viết</Comment>
+      <DataType>varchar(500)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="314" parent="296" name="oDate">
-      <DataType>datetime|0s</DataType>
+    <column id="301" parent="289" name="view_number">
+      <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="315" parent="296" name="oTotalPrice">
-      <DataType>int|0s</DataType>
+    <column id="302" parent="289" name="image">
+      <DataType>varchar(500)|0s</DataType>
+      <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <foreign-key id="316" parent="296" name="order_ibfk_1">
-      <ColNames>cID</ColNames>
-      <RefColNames>cID</RefColNames>
-      <RefTableName>Customer</RefTableName>
+    <column id="303" parent="289" name="content">
+      <DataType>longtext|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <column id="304" parent="289" name="category_id">
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="305" parent="289" name="user_id">
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <column id="306" parent="289" name="date">
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+    </column>
+    <foreign-key id="307" parent="289" name="posts_ibfk_2">
+      <ColNames>category_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>categories</RefTableName>
     </foreign-key>
-    <index id="317" parent="296" name="cID">
-      <ColNames>cID</ColNames>
+    <foreign-key id="308" parent="289" name="posts_ibfk_1">
+      <ColNames>user_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>users</RefTableName>
+    </foreign-key>
+    <index id="309" parent="289" name="category_id">
+      <ColNames>category_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="318" parent="296" name="PRIMARY">
-      <ColNames>oID</ColNames>
+    <index id="310" parent="289" name="user_id">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="311" parent="289" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="312" parent="290" name="id">
+      <AutoIncrement>22</AutoIncrement>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="313" parent="290" name="username">
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="314" parent="290" name="password">
+      <DataType>varchar(20)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="315" parent="290" name="full_name">
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <CollationName>utf8_general_ci</CollationName>
+    </column>
+    <column id="316" parent="290" name="level_id">
+      <Comment>quyền</Comment>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <foreign-key id="317" parent="290" name="users_ibfk_1">
+      <ColNames>level_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>level</RefTableName>
+    </foreign-key>
+    <index id="318" parent="290" name="level_id">
+      <ColNames>level_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="319" parent="290" name="PRIMARY">
+      <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
