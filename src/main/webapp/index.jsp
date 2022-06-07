@@ -57,7 +57,7 @@
                         <a class="nav-link" href="#"> Hello ${sessionScope.acc.username}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/logouts"> Log out</a>
+                        <a class="nav-link" href="/logout"> Log out</a>
                     </li>
                 </c:if>
                 <c:if test="${sessionScope.acc == null}">
