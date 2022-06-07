@@ -1,5 +1,8 @@
 package model;
 
+
+import java.sql.Date;
+
 public class Post {
     private int id;
     private String title;
@@ -8,9 +11,20 @@ public class Post {
     private String content;
     private int userId;
     private int categoryId;
-    private String date;
+    private Date date;
 
     public Post() {
+    }
+
+    public Post(int id, String title, int view, String image, String content, int userId, int categoryId, Date date) {
+        this.id = id;
+        this.title = title;
+        this.view = view;
+        this.image = image;
+        this.content = content;
+        this.userId = userId;
+        this.categoryId = categoryId;
+        this.date = date;
     }
 
     public int getId() {
@@ -69,11 +83,11 @@ public class Post {
         this.categoryId = categoryId;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 }

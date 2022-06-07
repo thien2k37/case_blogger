@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: thien
-  Date: 04/06/2022
-  Time: 18:24
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +44,6 @@
                 <div id="create">
                     <a href="new_blog.jsp"> <button type="button" class="btn btn-outline-danger ti-pencil-alt">+ Bài Đăng Mới</button></a>
                 </div>
-
                 <div class="select-one">
                     <ul class="select">
                         <li><a class="new-blog ti-receipt"></a></li>
@@ -80,36 +73,49 @@
             </div>
         </div>
         <div class="mid">
-            <div class="slides">
-                <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </button>
+            <div class="row mt-2">
+                <div class="col-9">
+                    <table class="table table-dark" style="text-align: center">
+                        <thead>
+                        <tr>
+                            <th scope="col">STT</th>
+                            <th scope="col">Tiêu Đề</th>
+                            <th scope="col">View</th>
+                            <th scope="col">Ngày Đăng</th>
+                            <th scope="col">#</th>
+                        </tr>
+                        </thead>
+                        <body>
+                        <c:forEach var="c" items="${listPost}">
+                            <tr style="text-align: center">
+                                <td>${c.id}</td>
+                                <td>${c.title}</td>
+                                <td>${c.view}</td>
+                                <td>${c.date}</td>
+                                <td>
+                                    <a class="btn btn-secondary" href="/posts?action=edit_blog&id=${c.id}">Sửa</a>
+                                    <a class="btn btn-secondary" href="/posts?action=edit_blog&id=${c.id}">Xem</a>
+                                    <form action="/posts" id="delete${c.id}" style="display: inline">
+                                        <input type="hidden" name="action" value="delete">
+                                        <input type="hidden" name="id" value="${c.id}">
+                                        <a class="btn btn-danger" onclick="xacNhanDelete(${c.id})">Xóa</a>
+                                    </form>
+                                </td>
+                            </tr>
+                        </c:forEach>
+                        </body>
+                    </table>
                 </div>
             </div>
-            <div class="mid-item"></div>
-            <div class="mid-item"></div>
-            <div class="mid-item"></div>
-            <div class="mid-item"></div>
-            <div class="mid-item"></div>
-            <div class="mid-item"></div>
-            <div class="mid-item"></div>
-            <div class="mid-item"></div>
         </div>
     </div>
 </div>
+<script>
+    function xacNhanDelete(id) {
+        if (confirm("Bạn có chắc muốn xoá?")) {
+            document.getElementById("delete"+id).submit();
+        }
+    }
+</script>
 </body>
 </html>

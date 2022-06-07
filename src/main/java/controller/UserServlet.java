@@ -50,7 +50,7 @@ public class UserServlet extends HttpServlet {
 
     private void showEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        User user = (User) userService.findById(id);
+        User user = userService.findById(id);
         request.setAttribute("user", user);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("user/edit.jsp");
         requestDispatcher.forward(request, response);
@@ -58,7 +58,7 @@ public class UserServlet extends HttpServlet {
 
     private void showView(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        User user = (User) userService.findById(id);
+        User user = userService.findById(id);
         request.setAttribute("user", user);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("user/view.jsp");
         requestDispatcher.forward(request, response);
@@ -77,17 +77,10 @@ public class UserServlet extends HttpServlet {
     }
 
     private void showList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String key = request.getParameter("key");
-        List<User> userList;
-        if (key != null & key != "") {
-            /*userList = userService.findByName(key);*/
-        } else {
-            userList = userService.findAll();
-        }
-        RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
-        /*request.setAttribute("user", userList);*/
-        dispatcher.forward(request, response);
-
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("user/list.jsp");
+        List<User> users = userService.findAll();
+        request.setAttribute("listUse", users);
+        requestDispatcher.forward(request, response);
     }
 
     @Override

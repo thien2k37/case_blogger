@@ -4,17 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba930032-5084-4278-8dc3-70f5519c7fd4" name="Changes" comment="">
+    <list default="true" id="ba930032-5084-4278-8dc3-70f5519c7fd4" name="Changes" comment="git ve nay">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/PostServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CategoryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CategoryServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LogoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/SigUpServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/SigUpServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CategoryServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/UserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/PostServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/blog/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/blog/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/blog/edit_blog.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/blog/edit_blog.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/blog/new_blog.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/blog/new_blog.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/blog/post.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/blog/post.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +57,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/thien/IdeaProjects/abc",
+    "last_opened_file_path": "/home/thien/IdeaProjects/case_blog",
     "nodejs_package_manager_path": "npm"
   },
   "keyToStringList": {
@@ -65,7 +67,8 @@
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="Tomcat 8.5.79" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.79" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Tomcat 8.5.79" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.79" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8081/posts" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="Gradle : com.example : case-blogger-1.0-SNAPSHOT.war">
@@ -75,7 +78,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="c8b877d7-9d4f-42d0-be9e-71b5627835dc" />
+        <option name="BASE_DIRECTORY_NAME" value="9fe2f37c-e3b3-4ffc-8587-916b2b70b97e" />
         <option name="HTTP_PORT" value="8081" />
         <option name="JNDI_PORT" value="1098" />
       </server-settings>
@@ -85,7 +88,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="42771" />
+        <option name="DEBUG_PORT" value="40285" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -163,8 +166,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654498324586</updated>
-      <workItem from="1654498326216" duration="4947000" />
+      <workItem from="1654498326216" duration="6734000" />
+      <workItem from="1654506484754" duration="1841000" />
+      <workItem from="1654526859826" duration="225000" />
+      <workItem from="1654564447165" duration="816000" />
+      <workItem from="1654571470595" duration="14735000" />
+      <workItem from="1654621401919" duration="7238000" />
     </task>
+    <task id="LOCAL-00001" summary="git ve nay">
+      <created>1654503311388</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1654503311388</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,5 +196,20 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="git ve nay" />
+    <option name="LAST_COMMIT_MESSAGE" value="git ve nay" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/controller/PostServlet.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

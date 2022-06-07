@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService {
                 String password = resultSet.getString("password");
                 String full_name = resultSet.getString("full_name");
                 int level = resultSet.getInt("level");
-                user = new User(id, username, password, full_name, level);
+                user = new User(idUser, username, password, full_name, level);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
