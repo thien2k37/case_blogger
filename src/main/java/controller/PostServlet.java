@@ -40,17 +40,20 @@ public class PostServlet extends HttpServlet {
     }
 
     private void showView(HttpServletRequest request, HttpServletResponse response) {
-//         List<Category> categories = categoryService.findAll();
-//         request.setAttribute("cate",categories);
-//        List<User> users = userService.findAll();
-//        request.setAttribute("user",categories);
+         List<Category> categories = categoryService.findAll();
+         request.setAttribute("cate",categories);
+        List<User> users = userService.findAll();
+        request.setAttribute("user",categories);
+
 //
+//        List<Level> levels = levelService.findAll();
+//        request.setAttribute("level", levels);
 //        int id = Integer.parseInt(request.getParameter("id"));
 //        User user = userService.findById(id);
 //        request.setAttribute("user", user);
 //        RequestDispatcher requestDispatcher = request.getRequestDispatcher("user/view.jsp");
 //        requestDispatcher.forward(request, response);
-//    }
+    }
 
     private void showList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");

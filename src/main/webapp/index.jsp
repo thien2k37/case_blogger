@@ -85,10 +85,10 @@
                             <a class="nav-link active" href="#">Active</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">dgsgsdg</a>
+                            <a class="nav-link" href="#">link</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled">gdg</a>
+                            <a class="nav-link disabled">mor</a>
                         </li>
                     </ul>
                 </div>
@@ -102,7 +102,7 @@
                         </div>
                     </div>
                     <div class="card">view_number
-                        <img src="..." class="card-img-top" alt="...">
+                        <img src="(img/7.png)" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title"  >TOP BLOG TRENDING2</h5>
                             <p class="card-text">
