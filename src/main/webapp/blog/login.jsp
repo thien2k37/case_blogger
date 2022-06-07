@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: thien
@@ -38,13 +39,12 @@
     </header>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="" method="post">
+            <form action="/sig_up" method="post">
                 <h4 style="color: #97212D">Đăng Ký tài khoản</h4>
                 <div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"><img src="../img/8.png"></i></a>
                     <a href="#" class="social"><i class="fab fa-facebook-f"><img src="../img/9.png"></i></a>
                     <a href="#" class="social"><i class="fab fa-facebook-f"><img src="../img/11.jpg"></i></a>
-
                 </div>
                 <input type="text" placeholder="Tên Đăng Nhâp hoặc Email" name="username"/>
                 <input type="password" placeholder="Mật Khẩu" name="password"/>
@@ -53,7 +53,8 @@
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="#" method="post">
+            <form action="/login" method="post">
+
                 <h1 style="color: #97212D">Đăng Nhập</h1>
                 <div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i><img src="../img/8.png"></a>
@@ -73,11 +74,13 @@
                     <p>Để giữ kết nối với chúng tôi, vui lòng đăng nhập bằng thông tin cá nhân của bạn</p>
                     <button class="ghost" id="signIn">Đăng Nhập</button>
                 </div>
-                <div class="overlay-panel overlay-right">
-                    <h1>XIn Chào, Bạn!</h1>
-                    <p>Nhập thông tin cá nhân của bạn và bắt đầu hành trình với chúng tôi</p>
-                    <button class="ghost" id="signUp"><a href="/sig_up">Đăng Ký</a></button>
-                </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>XIn Chào, Bạn!</h1>
+                        <p>Nhập thông tin cá nhân của bạn và bắt đầu hành trình với chúng tôi</p>
+                        <button class="ghost" id="signUp" ><a href="/sig_up" >Đăng Ký</a></button>
+                    </div>
+
+
             </div>
         </div>
     </div>

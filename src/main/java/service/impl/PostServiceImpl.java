@@ -1,6 +1,7 @@
 package service.impl;
 
 import model.Post;
+import model.User;
 import service.PostService;
 
 import java.sql.Connection;
@@ -11,7 +12,7 @@ import java.util.List;
 public class PostServiceImpl implements PostService {
     private String jdbcURL = "jdbc:mysql://localhost:3306/blogDB?useSSL=false";
     private String jdbcUsername = "root";
-    private String jdbcPassword = "cxtjmg2k";
+    private String jdbcPassword = "Dinhhoc8";
 
     protected Connection getConnection(){
         Connection connection = null;
@@ -28,8 +29,9 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public void add(Post post) throws SQLException {
+    public User add(Post post) throws SQLException {
 
+        return null;
     }
 
     @Override

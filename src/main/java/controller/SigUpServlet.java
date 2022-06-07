@@ -16,7 +16,8 @@ public class SigUpServlet extends HttpServlet {
     UserService userService = new UserServiceImpl();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("blog/login.jsp");
+        requestDispatcher.forward(request,response);
     }
 
     @Override
@@ -26,11 +27,7 @@ public class SigUpServlet extends HttpServlet {
         String full_name = request.getParameter("full_name");
         User user = userService.findByName(username);
         if (user == null) {
-            try {
-                userService.add(new User(username, password, full_name));
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            userService.signup(username, password, full_name);
             response.sendRedirect("blog/login.jsp");
         } else {
             response.sendRedirect("blog/login.jsp");

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="@localhost">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.39">
+<dataSource name="@localhost [2]">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.32">
     <root id="1">
-      <DefaultCasing>exact</DefaultCasing>
+      <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
       <Grants>|root||root|localhost|ALTER|G
@@ -62,6 +62,7 @@
 |root||root|localhost|ROLE_ADMIN|G
 |root||mysql.infoschema|localhost|SELECT|G
 |root||root|localhost|SELECT|G
+|root||root|localhost|SENSITIVE_VARIABLES_OBSERVER|G
 |root||root|localhost|SERVICE_CONNECTION_ADMIN|G
 |root||mysql.session|localhost|SESSION_VARIABLES_ADMIN|G
 |root||root|localhost|SESSION_VARIABLES_ADMIN|G
@@ -84,24 +85,6 @@
 |root||root|localhost|UPDATE|G
 |root||root|localhost|XA_RECOVER_ADMIN|G
 |root||root|localhost|grant option|G
-dbname|schema||username|localhost|ALTER|G
-dbname|schema||username|localhost|ALTER ROUTINE|G
-dbname|schema||username|localhost|CREATE|G
-dbname|schema||username|localhost|CREATE ROUTINE|G
-dbname|schema||username|localhost|CREATE TEMPORARY TABLES|G
-dbname|schema||username|localhost|CREATE VIEW|G
-dbname|schema||username|localhost|DELETE|G
-dbname|schema||username|localhost|DROP|G
-dbname|schema||username|localhost|EVENT|G
-dbname|schema||username|localhost|EXECUTE|G
-dbname|schema||username|localhost|INDEX|G
-dbname|schema||username|localhost|INSERT|G
-dbname|schema||username|localhost|LOCK TABLES|G
-dbname|schema||username|localhost|REFERENCES|G
-dbname|schema||username|localhost|SELECT|G
-dbname|schema||username|localhost|SHOW VIEW|G
-dbname|schema||username|localhost|TRIGGER|G
-dbname|schema||username|localhost|UPDATE|G
 performance_schema|schema||mysql.session|localhost|SELECT|G
 sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <ServerVersion>8.0.29</ServerVersion>
@@ -963,205 +946,199 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <collation id="273" parent="1" name="utf8mb4_zh_0900_as_cs">
       <Charset>utf8mb4</Charset>
     </collation>
-    <schema id="274" parent="1" name="QuanLyBanHang">
+    <schema id="274" parent="1" name="blogdb">
       <Current>1</Current>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="275" parent="1" name="QuanLySinhVien">
+    <schema id="275" parent="1" name="casemoduledb">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="276" parent="1" name="baiTap">
+    <schema id="276" parent="1" name="demo2006">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="277" parent="1" name="blogDB">
+    <schema id="277" parent="1" name="indexview">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="278" parent="1" name="classicmodels">
-      <CollationName>latin1_swedish_ci</CollationName>
-    </schema>
-    <schema id="279" parent="1" name="demo3105">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="280" parent="1" name="demo_case">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="281" parent="1" name="information_schema">
+    <schema id="278" parent="1" name="information_schema">
       <CollationName>utf8_general_ci</CollationName>
     </schema>
-    <schema id="282" parent="1" name="md">
+    <schema id="279" parent="1" name="managestudent">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="283" parent="1" name="mysql">
+    <schema id="280" parent="1" name="my_database">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="284" parent="1" name="performance_schema">
+    <schema id="281" parent="1" name="mysql">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="285" parent="1" name="playerdou">
+    <schema id="282" parent="1" name="performance_schema">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="286" parent="1" name="students_codegym">
+    <schema id="283" parent="1" name="product">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="287" parent="1" name="sys">
+    <schema id="284" parent="1" name="quanlybanhang">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <user id="288" parent="1" name="mysql.infoschema">
-      <CanLogin>0</CanLogin>
+    <schema id="285" parent="1" name="quanlysinhvien">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="286" parent="1" name="sakila">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="287" parent="1" name="student-managerment">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="288" parent="1" name="sys">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="289" parent="1" name="test">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="290" parent="1" name="world">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <user id="291" parent="1" name="mysql.infoschema">
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="289" parent="1" name="mysql.session">
-      <CanLogin>0</CanLogin>
+    <user id="292" parent="1" name="mysql.session">
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="290" parent="1" name="mysql.sys">
-      <CanLogin>0</CanLogin>
+    <user id="293" parent="1" name="mysql.sys">
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="291" parent="1" name="root">
+    <user id="294" parent="1" name="root">
       <Host>localhost</Host>
+      <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="292" parent="1" name="username">
-      <Host>localhost</Host>
-    </user>
-    <table id="293" parent="277" name="categories">
+    <table id="295" parent="274" name="categories">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="294" parent="277" name="posts">
+    <table id="296" parent="274" name="posts">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="295" parent="277" name="users">
+    <table id="297" parent="274" name="users">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="296" parent="293" name="id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="298" parent="295" name="id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="297" parent="293" name="name">
+    <column id="299" parent="295" name="name">
       <DataType>varchar(500)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <key id="298" parent="293" name="PRIMARY">
+    <key id="300" parent="295" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="299" parent="294" name="id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="301" parent="296" name="id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="300" parent="294" name="title">
+    <column id="302" parent="296" name="title">
       <Comment>tiêu đề bài viết</Comment>
       <DataType>varchar(500)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="301" parent="294" name="view_number">
+    <column id="303" parent="296" name="view_number">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="302" parent="294" name="image">
+    <column id="304" parent="296" name="image">
       <DataType>varchar(500)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="303" parent="294" name="content">
+    <column id="305" parent="296" name="content">
       <DataType>longtext|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="304" parent="294" name="category_id">
+    <column id="306" parent="296" name="category_id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="305" parent="294" name="user_id">
+    <column id="307" parent="296" name="user_id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <column id="306" parent="294" name="date">
+    <column id="308" parent="296" name="date">
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
-    <foreign-key id="307" parent="294" name="posts_ibfk_2">
+    <foreign-key id="309" parent="296" name="posts_ibfk_2">
       <ColNames>category_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>categories</RefTableName>
     </foreign-key>
-    <foreign-key id="308" parent="294" name="posts_ibfk_1">
+    <foreign-key id="310" parent="296" name="posts_ibfk_1">
       <ColNames>user_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <index id="309" parent="294" name="category_id">
+    <index id="311" parent="296" name="category_id">
       <ColNames>category_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="310" parent="294" name="user_id">
+    <index id="312" parent="296" name="user_id">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="311" parent="294" name="PRIMARY">
+    <key id="313" parent="296" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="312" parent="295" name="id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="314" parent="297" name="id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="313" parent="295" name="username">
+    <column id="315" parent="297" name="username">
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="314" parent="295" name="password">
+    <column id="316" parent="297" name="password">
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="315" parent="295" name="full_name">
+    <column id="317" parent="297" name="full_name">
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <CollationName>utf8_general_ci</CollationName>
     </column>
-    <column id="316" parent="295" name="level">
+    <column id="318" parent="297" name="level">
       <Comment>quyền</Comment>
       <DataType>int|0s</DataType>
-      <DefaultExpression>0</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <index id="317" parent="295" name="users_username_unique">
-      <ColNames>username</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="318" parent="295" name="PRIMARY">
+    <key id="319" parent="297" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
-    </key>
-    <key id="319" parent="295" name="users_username_unique">
-      <ColNames>username</ColNames>
-      <UnderlyingIndexName>users_username_unique</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

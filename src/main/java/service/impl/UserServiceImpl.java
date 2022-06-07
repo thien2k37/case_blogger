@@ -10,7 +10,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
     private String jdbcURL = "jdbc:mysql://localhost:3306/blogDB?useSSL=false";
     private String jdbcUsername = "root";
-    private String jdbcPassword = "cxtjmg2k";
+    private String jdbcPassword = "Dinhhoc8";
 
     protected Connection getConnection(){
         Connection connection = null;
@@ -27,14 +27,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void add(User user) throws SQLException {
+    public User add(User user) throws SQLException {
         try(Connection connection = getConnection();
-        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO users( username, password, full_name) values (?,?,?)")) {
+        PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO users( username, password, full_name) values (0,?,?,?,2)")) {
             preparedStatement.setString(1, user.getUsername());
             preparedStatement.setString(2, user.getPassword());
             preparedStatement.setString(3, user.getFull_name());
             preparedStatement.executeUpdate();
         }
+        return user;
     }
 
     @Override
@@ -112,17 +113,51 @@ public class UserServiceImpl implements UserService {
                 return user;
             }
         }
-        return new User();
+        return null;
     }
 
     @Override
     public User login(String username, String password) {
         List<User> userList = findAll();
         for (User user: userList) {
-            if (user.getUsername().equals(username) & user.getPassword().equals(password)) {
+            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
                 return user;
             }
         }
-        return new User();
+        return null;
+    }
+
+    public User login1(String username, String password) {
+        try(Connection connection = getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users where username= ? and password=?")) {
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2,password);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+               return new User(
+                       resultSet.getInt(1),
+                       resultSet.getString(2),
+                       resultSet.getString(3),
+                       resultSet.getString(4),
+                       resultSet.getInt(5)
+               );
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+    public void signup(String username, String password, String full_name) {
+        try(Connection connection = getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("insert into users values (0,?,?,?,2)")) {
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2,password);
+            preparedStatement.setString(3, full_name);
+            preparedStatement.executeUpdate();
+
+            } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
     }
 }

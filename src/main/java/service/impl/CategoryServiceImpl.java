@@ -1,6 +1,7 @@
 package service.impl;
 
 import model.Category;
+import model.User;
 import service.CategoryService;
 
 import java.sql.Connection;
@@ -10,7 +11,7 @@ import java.sql.SQLException;
 public class CategoryServiceImpl implements CategoryService {
     private String jdbcURL = "jdbc:mysql://localhost:3306/blogDB?useSSL=false";
     private String jdbcUsername = "root";
-    private String jdbcPassword = "cxtjmg2k";
+    private String jdbcPassword = "Dinhhoc8";
 
     protected Connection getConnection(){
         Connection connection = null;
@@ -27,8 +28,9 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public void add(Category category) throws SQLException {
+    public User add(Category category) throws SQLException {
 
+        return null;
     }
 
     @Override
