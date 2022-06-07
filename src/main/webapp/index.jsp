@@ -93,33 +93,38 @@
                     </ul>
                 </div>
                 <div class="card-group">
-                    <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">TOP BLOG TRENDING1</h5>
-                            <p class="card-text">NỘI DUNG BẢNG 1</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                    <div class="card">view_number
-                        <img src="(img/7.png)" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title"  >TOP BLOG TRENDING2</h5>
-                            <p class="card-text">
-                                <h1> test ở dây</h1>
 
-                            </p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <c:forEach var="pos" items="${posts}">
+                        <div class="card">
+                            <img src="${pos.image}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">${pos.title}</h5>
+                                <p class="card-text">${pos.content}</p>
+                                <p class="card-text"><small class="text-muted">${pos.date}</small></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">TOP BLOG TRENDING1 </p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
+
+                    </c:forEach>
+
+<%--                    <div class="card">view_number--%>
+<%--                        <img src="(img/7.png)" class="card-img-top" alt="...">--%>
+<%--                        <div class="card-body">--%>
+<%--                            <h5 class="card-title"  >TOP BLOG TRENDING2</h5>--%>
+<%--                            <p class="card-text">--%>
+<%--                                <h1> test ở dây</h1>--%>
+
+<%--                            </p>--%>
+<%--                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="card">--%>
+<%--                        <img src="..." class="card-img-top" alt="...">--%>
+<%--                        <div class="card-body">--%>
+<%--                            <h5 class="card-title">Card title</h5>--%>
+<%--                            <p class="card-text">TOP BLOG TRENDING1 </p>--%>
+<%--                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
                 </div>
             </div>
         </main>

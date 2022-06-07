@@ -43,7 +43,7 @@ public class PostServlet extends HttpServlet {
     private void showViewTrend(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Post> posts = postService.findTrend();
         request.setAttribute("posts", posts);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("test.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
         requestDispatcher.forward(request, response);
     }
 
