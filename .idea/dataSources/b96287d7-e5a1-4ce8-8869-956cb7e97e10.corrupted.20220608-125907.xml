@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataSource name="@localhost">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.39">
+<dataSource name="@localhost [2]">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.32">
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -950,6 +950,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Current>1</Current>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
+<<<<<<< HEAD:.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml
     <schema id="275" parent="1" name="demo2022">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
@@ -957,11 +958,21 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="277" parent="1" name="demogist">
+=======
+    <schema id="275" parent="1" name="casemoduledb">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="276" parent="1" name="demo2006">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="277" parent="1" name="indexview">
+>>>>>>> origin/hoc:.idea/dataSources/b96287d7-e5a1-4ce8-8869-956cb7e97e10.xml
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="278" parent="1" name="information_schema">
       <CollationName>utf8_general_ci</CollationName>
     </schema>
+<<<<<<< HEAD:.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml
     <schema id="279" parent="1" name="mysql">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
@@ -1006,73 +1017,191 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
     <column id="290" parent="287" name="id">
-      <AutoIncrement>5</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
+=======
+    <schema id="279" parent="1" name="managestudent">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="280" parent="1" name="my_database">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="281" parent="1" name="mysql">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="282" parent="1" name="performance_schema">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="283" parent="1" name="product">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="284" parent="1" name="quanlybanhang">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="285" parent="1" name="quanlysinhvien">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="286" parent="1" name="sakila">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="287" parent="1" name="student-managerment">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="288" parent="1" name="sys">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="289" parent="1" name="test">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="290" parent="1" name="world">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <user id="291" parent="1" name="mysql.infoschema">
+      <Host>localhost</Host>
+      <Plugin>caching_sha2_password</Plugin>
+    </user>
+    <user id="292" parent="1" name="mysql.session">
+      <Host>localhost</Host>
+      <Plugin>caching_sha2_password</Plugin>
+    </user>
+    <user id="293" parent="1" name="mysql.sys">
+      <Host>localhost</Host>
+      <Plugin>caching_sha2_password</Plugin>
+    </user>
+    <user id="294" parent="1" name="root">
+      <Host>localhost</Host>
+      <Plugin>caching_sha2_password</Plugin>
+    </user>
+    <table id="295" parent="274" name="categories">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="296" parent="274" name="posts">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="297" parent="274" name="users">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="298" parent="295" name="id">
+>>>>>>> origin/hoc:.idea/dataSources/b96287d7-e5a1-4ce8-8869-956cb7e97e10.xml
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
+<<<<<<< HEAD:.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml
     <column id="291" parent="287" name="name">
+=======
+    <column id="299" parent="295" name="name">
+>>>>>>> origin/hoc:.idea/dataSources/b96287d7-e5a1-4ce8-8869-956cb7e97e10.xml
       <DataType>varchar(500)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
+<<<<<<< HEAD:.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml
     <key id="292" parent="287" name="PRIMARY">
+=======
+    <key id="300" parent="295" name="PRIMARY">
+>>>>>>> origin/hoc:.idea/dataSources/b96287d7-e5a1-4ce8-8869-956cb7e97e10.xml
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
+<<<<<<< HEAD:.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml
     <column id="293" parent="288" name="id">
-      <AutoIncrement>5</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
+=======
+    <column id="301" parent="296" name="id">
+>>>>>>> origin/hoc:.idea/dataSources/b96287d7-e5a1-4ce8-8869-956cb7e97e10.xml
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
+<<<<<<< HEAD:.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml
     <column id="294" parent="288" name="title">
+=======
+    <column id="302" parent="296" name="title">
+>>>>>>> origin/hoc:.idea/dataSources/b96287d7-e5a1-4ce8-8869-956cb7e97e10.xml
       <Comment>tiêu đề bài viết</Comment>
       <DataType>varchar(500)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
+<<<<<<< HEAD:.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml
     <column id="295" parent="288" name="view_number">
+=======
+    <column id="303" parent="296" name="view_number">
+>>>>>>> origin/hoc:.idea/dataSources/b96287d7-e5a1-4ce8-8869-956cb7e97e10.xml
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
+<<<<<<< HEAD:.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml
     <column id="296" parent="288" name="image">
+=======
+    <column id="304" parent="296" name="image">
+>>>>>>> origin/hoc:.idea/dataSources/b96287d7-e5a1-4ce8-8869-956cb7e97e10.xml
       <DataType>varchar(500)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
+<<<<<<< HEAD:.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml
     <column id="297" parent="288" name="content">
+=======
+    <column id="305" parent="296" name="content">
+>>>>>>> origin/hoc:.idea/dataSources/b96287d7-e5a1-4ce8-8869-956cb7e97e10.xml
       <DataType>longtext|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
+<<<<<<< HEAD:.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml
     <column id="298" parent="288" name="category_id">
+=======
+    <column id="306" parent="296" name="category_id">
+>>>>>>> origin/hoc:.idea/dataSources/b96287d7-e5a1-4ce8-8869-956cb7e97e10.xml
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
+<<<<<<< HEAD:.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml
     <column id="299" parent="288" name="user_id">
+=======
+    <column id="307" parent="296" name="user_id">
+>>>>>>> origin/hoc:.idea/dataSources/b96287d7-e5a1-4ce8-8869-956cb7e97e10.xml
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
+<<<<<<< HEAD:.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml
     <column id="300" parent="288" name="date">
+=======
+    <column id="308" parent="296" name="date">
+>>>>>>> origin/hoc:.idea/dataSources/b96287d7-e5a1-4ce8-8869-956cb7e97e10.xml
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
       <Position>8</Position>
     </column>
+<<<<<<< HEAD:.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml
     <foreign-key id="301" parent="288" name="posts_ibfk_2">
+=======
+    <foreign-key id="309" parent="296" name="posts_ibfk_2">
+>>>>>>> origin/hoc:.idea/dataSources/b96287d7-e5a1-4ce8-8869-956cb7e97e10.xml
       <ColNames>category_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>categories</RefTableName>
     </foreign-key>
+<<<<<<< HEAD:.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml
     <foreign-key id="302" parent="288" name="posts_ibfk_1">
+=======
+    <foreign-key id="310" parent="296" name="posts_ibfk_1">
+>>>>>>> origin/hoc:.idea/dataSources/b96287d7-e5a1-4ce8-8869-956cb7e97e10.xml
       <ColNames>user_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
+<<<<<<< HEAD:.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml
     <index id="303" parent="288" name="category_id">
       <ColNames>category_id</ColNames>
       <Type>btree</Type>
@@ -1082,39 +1211,75 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Type>btree</Type>
     </index>
     <key id="305" parent="288" name="PRIMARY">
+=======
+    <index id="311" parent="296" name="category_id">
+      <ColNames>category_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="312" parent="296" name="user_id">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="313" parent="296" name="PRIMARY">
+>>>>>>> origin/hoc:.idea/dataSources/b96287d7-e5a1-4ce8-8869-956cb7e97e10.xml
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
+<<<<<<< HEAD:.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml
     <column id="306" parent="289" name="id">
-      <AutoIncrement>4</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
+=======
+    <column id="314" parent="297" name="id">
+>>>>>>> origin/hoc:.idea/dataSources/b96287d7-e5a1-4ce8-8869-956cb7e97e10.xml
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
+<<<<<<< HEAD:.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml
     <column id="307" parent="289" name="username">
+=======
+    <column id="315" parent="297" name="username">
+>>>>>>> origin/hoc:.idea/dataSources/b96287d7-e5a1-4ce8-8869-956cb7e97e10.xml
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
+<<<<<<< HEAD:.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml
     <column id="308" parent="289" name="password">
+=======
+    <column id="316" parent="297" name="password">
+>>>>>>> origin/hoc:.idea/dataSources/b96287d7-e5a1-4ce8-8869-956cb7e97e10.xml
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
+<<<<<<< HEAD:.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml
     <column id="309" parent="289" name="full_name">
+=======
+    <column id="317" parent="297" name="full_name">
+>>>>>>> origin/hoc:.idea/dataSources/b96287d7-e5a1-4ce8-8869-956cb7e97e10.xml
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
       <CollationName>utf8_general_ci</CollationName>
     </column>
+<<<<<<< HEAD:.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml
     <column id="310" parent="289" name="level">
+=======
+    <column id="318" parent="297" name="level">
+>>>>>>> origin/hoc:.idea/dataSources/b96287d7-e5a1-4ce8-8869-956cb7e97e10.xml
       <Comment>quyền</Comment>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
+<<<<<<< HEAD:.idea/dataSources/4423a475-37bf-4659-876b-8b5e1ee327ff.xml
     <key id="311" parent="289" name="PRIMARY">
+=======
+    <key id="319" parent="297" name="PRIMARY">
+>>>>>>> origin/hoc:.idea/dataSources/b96287d7-e5a1-4ce8-8869-956cb7e97e10.xml
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
