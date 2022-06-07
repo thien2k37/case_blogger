@@ -18,10 +18,11 @@ import java.util.List;
 
 @WebServlet(name = "PostServlet", urlPatterns = "/post")
 public class PostServlet extends HttpServlet {
-    CategoryService categoryService =new CategoryServiceImpl();
-    PostService postService = new PostServiceImpl();
+    CategoryService categoryService = new CategoryServiceImpl();
+    PostServiceImpl postService = new PostServiceImpl();
 
-    UserService userService =new UserServiceImpl();
+    UserService userService = new UserServiceImpl();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -31,35 +32,39 @@ public class PostServlet extends HttpServlet {
         }
         switch (action) {
             case "view":
-        showView(request,response);
-            case "":
+                showViewTrend(request, response);
+                break;
             default:
-                showList(request,response);
-                
+                showList(request, response);
+
         }
     }
 
-    private void showView(HttpServletRequest request, HttpServletResponse response) {
-         List<Category> categories = categoryService.findAll();
-         request.setAttribute("cate",categories);
-        List<User> users = userService.findAll();
-        request.setAttribute("user",categories);
+    private void showViewTrend(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Post> posts = postService.findTrend();
+        request.setAttribute("posts", posts);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("test.jsp");
+        requestDispatcher.forward(request, response);
+    }
 
-//
-//        List<Level> levels = levelService.findAll();
-//        request.setAttribute("level", levels);
-//        int id = Integer.parseInt(request.getParameter("id"));
-//        User user = userService.findById(id);
-//        request.setAttribute("user", user);
-//        RequestDispatcher requestDispatcher = request.getRequestDispatcher("user/view.jsp");
-//        requestDispatcher.forward(request, response);
+    private void showView(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Category> categories = categoryService.findAll();
+        request.setAttribute("cate", categories);
+        List<User> users = userService.findAll();
+        request.setAttribute("user", users);
+        int id = Integer.parseInt(request.getParameter("id"));
+        Post post = postService.findById(id);
+        request.setAttribute("post", post);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("test.jsp");
+        requestDispatcher.forward(request, response);
+
     }
 
     private void showList(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
-        List<Post> posts= postService.findAll();
-        request.setAttribute("post",posts);
-        requestDispatcher.forward(request,response);
+        List<Post> posts = postService.findAll();
+        request.setAttribute("post", posts);
+        requestDispatcher.forward(request, response);
     }
 
     @Override

@@ -107,13 +107,7 @@
                             <h5 class="card-title"  >TOP BLOG TRENDING2</h5>
                             <p class="card-text">
                                 <h1> test ở dây</h1>
-                                <c:forEach var="pos" items="${post}">
-                            ${pos.title}
-                            ${pos.view_number}
-                            ${pos.content}
-                            ${pos.image}
-                            ${pos.date}
-                            </c:forEach>
+
                             </p>
                             <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>

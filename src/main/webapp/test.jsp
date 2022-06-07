@@ -12,9 +12,19 @@
     <title>Title</title>
 </head>
 <body>
-<h1> đang test
+<h1>
 </h1>
-<c:forEach var="pos" items="${post}">
+
+<%--<td>${requestScope["post"].getTitle()}</td>--%>
+<%--<td>${requestScope["post"].getView_number()}</td>--%>
+<%--<td>${requestScope["post"].getImage()}</td>--%>
+<%--<td>${requestScope["post"].getContent()}</td>--%>
+
+
+
+
+
+<c:forEach var="pos" items="${posts}">
     <tr>
         <td>${pos.title}</td>
         <td>${pos.image}</td>
