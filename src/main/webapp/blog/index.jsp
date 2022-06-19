@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +34,36 @@
                 <option value="lang">Tiếng Anh</option>
             </select>
             <div class="sign">
-                <a href="/login" class="sign-items" style="color: #FFFFFF">Đăng Nhập</a>
+                <c:if test="${sessionScope.acc.level == 3}">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> Manager User</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> Manager Post</a>
+                    </li>
+                </c:if>
+                <c:if test="${sessionScope.acc.level == 0}">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/posts?id=${sessionScope.acc.id}"> Quản lý Blog</a>
+                    </li>
+                </c:if>
+                <c:if test="${sessionScope.acc.level == 1}">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/index.jsp">Quản Lý Blogger</a>
+                    </li>
+                </c:if>
+                <c:if test="${sessionScope.acc != null}">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> Hello ${sessionScope.acc.username}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout"> Log out</a>
+                    </li>
+                </c:if>
+                <c:if test="${sessionScope.acc == null}">
+                    <a href="/blog/login.jsp" class="sign-items" style="color: #FFFFFF">Đăng Nhập</a>
+                </c:if>
+
             </div>
         </div>
     </header>
@@ -42,6 +72,7 @@
         <main id="home1">
             <div class="carousel-inner">
                 <div class="carousel-item active">
+                    .3
                     <img src="https://www.salesforce.com/content/dam/blogs/ca/Blog%20Posts/The-Purpose-and-Goals-of-Your-Blog-opengraph-.png" class="d-block w-100" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h5 style="color: #97212D">Lưu giữ kỷ niệm của bạn</h5>
